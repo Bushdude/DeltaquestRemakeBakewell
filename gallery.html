@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="logo">Δ</a>
+  <div class="nav">
+    <a href="gallery.html">Gallery</a>
+    <a class="disabled">Downloads</a>
+    <a class="disabled">Changelog</a>
+  </div>
+</div>
+
+<div class="content">
+  <h1>Gallery</h1>
+  <p>Archived visual material.</p>
+
+  <div id="gallery"></div>
+</div>
+
+<script>
+  // ===== CONFIG =====
+  const IMAGE_COUNT = 1;
+  const IMAGE_PATH = "images/gallery/";
+  const IMAGE_PREFIX = "fig";
+  const IMAGE_EXT = ".png";
+  // ==================
+
+  const gallery = document.getElementById("gallery");
+
+  for (let i = 1; i <= IMAGE_COUNT; i++) {
+    const img = document.createElement("img");
+    img.src = IMAGE_PATH + IMAGE_PREFIX + i + IMAGE_EXT;
+    img.alt = "Figure " + i;
+    img.className = "gallery-image";
+    gallery.appendChild(img);
+  }
+</script>
+
+</body>
+</html>
